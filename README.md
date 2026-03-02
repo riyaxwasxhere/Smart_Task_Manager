@@ -7,9 +7,9 @@ Planora is a modern and intuitive task management application designed to help u
 
 You can download and install the latest Planora APK from GitHub Releases.
 
-⬇️ Download Latest APK](https://github.com/riyaxwasxhere/Smart_Task_Manager/releases/latest/download/planora.apk)
+[⬇️ Download Latest APK](https://github.com/riyaxwasxhere/Smart_Task_Manager/releases/latest/download/planora.apk)
 
-⚠️ Enable **Install from Unknown Sources** on your Android device before installing.
+>⚠️ Enable **Install from Unknown Sources** on your Android device before installing.
 
 ---
 
