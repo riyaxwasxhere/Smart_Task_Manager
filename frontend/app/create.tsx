@@ -151,7 +151,6 @@ const Create = () => {
                 minimumDate={new Date()}
                 onChange={(event, selectedDate) => {
                   setShowPicker(false)
-
                   if (event.type === "set" && selectedDate) {
                     setDate(selectedDate)
                   }

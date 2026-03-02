@@ -20,15 +20,22 @@ const TaskCard = ({ task, onUpdate }) => {
 
     const handleDelete = async () => {
         try {
-            await API.delete(`/tasks/delete-task/${task._id}`)
-            onUpdate()
+            console.log("Deleting:", task._id);
+
+            const res = await API.delete(
+            `/tasks/delete-task/${task._id}`
+            );
+
+            console.log("DELETE RESPONSE:", res.data);
+
+            onUpdate();
         } catch (error) {
-            console.log(error.response?.data || error.message)
+            console.log(error.response?.data || error.message);
         }
     }
             
   return (
-    <View className='flex-row items-center justify-between w-full h-10 gap-1 px-2 rounded-lg bg-[#5E2E14]'>
+    <View className='flex-row items-center justify-between w-full px-2 py-2 rounded-lg bg-[#5E2E14]'>
         
         <View className='flex-row'>
             

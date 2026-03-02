@@ -48,7 +48,8 @@ const SignInScreen = () => {
       })
 
       await AsyncStorage.setItem("token", response.data.token);
-
+      await AsyncStorage.setItem("user", JSON.stringify(response.data.user));
+      
       const token = await AsyncStorage.getItem("token");
       console.log("TOKEN SAVED:", token);
       

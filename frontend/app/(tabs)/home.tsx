@@ -16,7 +16,6 @@ const Home = () => {
   const [searchedText, setSearchedText] = useState("")
   const [selectedPriority, setSelectedPriority ] = useState("")
   const [selectedStatus, setSelectedStatus] = useState("")
-
   const fetchTasks = async () =>{
     try {
       const response = await API.get('/tasks/get-all-tasks')
