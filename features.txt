@@ -1,0 +1,33 @@
+Authentication
+Register
+Login
+JWT auth
+
+Task Management
+Create
+Update
+Delete
+Status change
+Priority
+
+Advanced Task
+Subtasks
+Progress %
+Categories
+
+Dashboard
+Stats
+Progress
+High priority tasks
+
+Calendar
+Deadline view
+
+Reminder
+Notifications
+
+UX
+Search
+Filters
+Loading state
+Empty state

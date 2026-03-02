@@ -5,16 +5,17 @@ import connectDB from './config/db.js'
 import authRouter from './routes/authRoutes.js'
 import taskRouter from './routes/taskRoutes.js'
 import authMiddleware from './middlewares/authMiddleware.js'
+import cors from 'cors'
 
 dotenv.config()
 
 const app = express()
 const port = process.env.PORT || 5000
 
-// app.use(cors({
-//     origin: 'http://localhost:3000',
-//     credentials: true
-// }))
+app.use(cors({
+    origin: 'http://localhost:8081',
+    credentials: true
+}))
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -12,7 +12,7 @@ export const createTask = async (req,res) => {
 export const getTasks = async (req,res) => {
     try{
         const {status, search } = req.query;
-        let query = { userId: req.userId };
+        let query = { user: req.userId };
         if(status) query.status = status;
         if(search) query.title = { $regex: search, $options: 'i' };
         
