@@ -7,7 +7,8 @@ import StatsCard from '../../components/StatsCard'
 import TaskCard from '../../components/TaskCard'
 import ProgressBar from '../../components/ProgressBar'
 import API from '../../api/axios'
-
+import { useFocusEffect } from '@react-navigation/native'
+import { useCallback } from 'react'
 
 const Home = () => {
   const [tasks, setTasks] = useState([])
@@ -25,9 +26,11 @@ const Home = () => {
     }
   }
 
-  useEffect(()=>{
-    fetchTasks()
-  },[])
+  useFocusEffect(
+    useCallback(() => {
+      fetchTasks()
+    }, [])
+  )
 
   const today = new Date().toISOString().split("T")[0]
   const todayTasks = tasks.filter(

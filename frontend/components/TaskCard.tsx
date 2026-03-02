@@ -17,7 +17,16 @@ const TaskCard = ({ task, onUpdate }) => {
             console.log(error.response?.data || error.message);
         }
     }
-    
+
+    const handleDelete = async () => {
+        try {
+            await API.delete(`/tasks/delete-task/${task._id}`)
+            onUpdate()
+        } catch (error) {
+            console.log(error.response?.data || error.message)
+        }
+    }
+            
   return (
     <View className='flex-row items-center justify-between w-full h-10 gap-1 px-2 rounded-lg bg-[#5E2E14]'>
         
@@ -46,7 +55,9 @@ const TaskCard = ({ task, onUpdate }) => {
         </View>
         <View className='flex-row gap-2'>
             <Ionicons name='create-outline' size={20} color="white" />
-            <Ionicons name='trash-bin-outline' size={20} color="white" />
+            <Pressable onPress={handleDelete}>
+                <Ionicons name='trash-bin-outline' size={20} color="white" />
+            </Pressable>
         </View>
     </View>
   )
