@@ -1,7 +1,7 @@
 import { View, Text, Pressable } from 'react-native'
-import React, { useState } from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import API from '../api/axios'
+import { router } from "expo-router"
 
 const TaskCard = ({ task, onUpdate }) => {
     const handleComplete = async () => {
@@ -54,7 +54,16 @@ const TaskCard = ({ task, onUpdate }) => {
             >{task.title}</Text>
         </View>
         <View className='flex-row gap-2'>
-            <Ionicons name='create-outline' size={20} color="white" />
+            <Pressable onPress={()=>
+                router.push({
+                    pathname: '/create',
+                    params: {
+                        task: JSON.stringify(task),
+                    }
+                })
+            }>
+                <Ionicons name='create-outline' size={20} color="white" />
+            </Pressable>
             <Pressable onPress={handleDelete}>
                 <Ionicons name='trash-bin-outline' size={20} color="white" />
             </Pressable>

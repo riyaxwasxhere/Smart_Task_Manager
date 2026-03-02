@@ -50,7 +50,7 @@ const SignInScreen = () => {
       await AsyncStorage.setItem("token", response.data.token);
 
       const token = await AsyncStorage.getItem("token");
-console.log("TOKEN SAVED:", token);
+      console.log("TOKEN SAVED:", token);
       
       console.log('Sign in successful: ',response.data)
       setError("")
